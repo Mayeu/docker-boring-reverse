@@ -15,7 +15,7 @@ To create a reverse proxy to your desired URL you have to set the
 
 Example:
 ```
-$ docker run -it --env REVERSE_TARGET='https://mayeu.me' boring-reverse
+$ docker run -it -p 8080:80 --env REVERSE_TARGET='https://mayeu.me' boring-reverse
 # In another terminal
 $ curl localhost:8080
 <!doctype html>
