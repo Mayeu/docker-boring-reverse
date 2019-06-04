@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Fail to start is anything goes wrong
+set -e
+
+# Create the configuration
+envsubst < /etc/boring-reverse/default.template > /etc/nginx/conf.d/default.conf
+
+# Exec is better here to ensure external signal are passed to nginx
+exec nginx -g 'daemon off;'
